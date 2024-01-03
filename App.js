@@ -1,13 +1,32 @@
-const heading = React.createElement("div", { id: "parent" }, [
-  React.createElement("div", { id: "child1" }, [
-    React.createElement("h1", {}, "child one"),
-    React.createElement("h2", {}, "child two"),
-  ]),
-  React.createElement("div", { id: "child2" }, [
-    React.createElement("h1", {}, "child 2"),
-    React.createElement("h2", {}, "child 2"),
-  ]),
-]);
-console.log(heading);
+import React from "react";
+import ReactDOM from "react-dom";
+import Header from "./src/components/Header";
+import Body from "./src/components/Body";
+
+/*
+ * Header
+ * - Logo
+ * - Nav Items
+ * Body
+ * - Search
+ * - RestaruntContainer
+ *   - RestaruntCard
+ *    - Img
+ *    - Name of Res, Star Rating, cusine, delevry Time
+ * Footer
+ *   - Copyright
+ *   - Links
+ *   - Address
+ *   - Contact
+ */
+
+const AppLayout = () => {
+  return (
+    <div className="app">
+      <Header />
+      <Body />
+    </div>
+  );
+};
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(heading);
+root.render(<AppLayout />);
